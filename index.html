@@ -54,41 +54,41 @@
           <h1 class="page-title advantages-description-title">Седона &mdash; небольшой городок в Аризоне, заслуживающий большего!</h1>
           <p class="page-text advantages-description-text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
         </div>
-        <div class="advantages-items">
-          <div class="advantages-item">
-            <h2 class="page-title advantages-item-title">Настоящий городок</h2>
-            <span class="advantages-item-separator"></span>
-            <p class="page-text advantages-item-text">Седона&nbsp;&mdash;&nbsp;не&nbsp;аттракцион&nbsp;для туристов,&nbsp;там&nbsp;течёт&nbsp;своя жизнь</p>
-          </div>
-          <div class="advantages-item advantages-item-wide-img">
-            <img class="image-feature-1" src="images/photos/photo-1.jpg" width="800" height="385" alt="Real town">
-            <span class="visually-hidden">Изображение города</span>
-          </div>
-          <div class="advantages-item">
+        <ul class="list-global advantages-items">
+          <li class="advantages-item advantages-item-with-picture">
+            <div class="advantages-item-inner-block">
+              <h2 class="page-title advantages-item-title">Настоящий&nbsp; городок</h2>
+              <span class="advantages-item-separator"></span>
+              <p class="page-text advantages-item-text">Седона&nbsp;&mdash;&nbsp;не&nbsp;аттракцион&nbsp;для туристов,&nbsp;там&nbsp;течёт&nbsp;своя жизнь</p>
+            </div>            
+            <img class="advantages-image" src="images/photos/photo-1.jpg" width="800" height="385" alt="Real town">
+            <span class="visually-hidden">Изображение города</span>                  
+          </li>
+          <li class="advantages-item">
             <h3 class="page-title advantages-item-title">Небольшая площадь</h3>
             <span class="advantages-item-separator"></span>
             <p class="page-text advantages-item-text">Все&nbsp;достопримечательности находятся&nbsp;очень&nbsp;близко</p>
-          </div>
-          <div class="advantages-item">
+          </li>
+          <li class="advantages-item">
             <h3 class="page-title advantages-item-title">Красивая дорога</h3>
             <span class="advantages-item-separator"></span>
             <p class="page-text advantages-item-text">Ехать&nbsp;в&nbsp;Седону&nbsp;из&nbsp;Лас-Вегаса совсем&nbsp;не&nbsp;скучно!</p>
-          </div>
-          <div class="advantages-item">
+          </li>
+          <li class="advantages-item">
             <h3 class="page-title advantages-item-title">Мало туристов</h3>
             <span class="advantages-item-separator"></span>
             <p class="page-text advantages-item-text">Большинство&nbsp;едет&nbsp;в&nbsp;Гранд Каньон&nbsp;и&nbsp;толпится&nbsp;там</p>
-          </div>
-          <div class="advantages-item advantages-item-wide-img">
-            <img class="image-feature-5" src="images/photos/photo-2.jpg" width="800" height="385" alt="Bridge photo">
+          </li>              
+          <li class="advantages-item advantages-item-with-picture">
+            <img class="advantages-image" src="images/photos/photo-2.jpg" width="800" height="385" alt="Bridge photo">
             <span class="visually-hidden">Изображение достопримечательности Мост Дьявола</span>
-          </div>
-          <div class="advantages-item">
-            <h3 class="page-title advantages-item-title">Там&nbsp;есть Мост&nbsp;Дьявола</h3>
-            <span class="advantages-item-separator"></span>
-            <p class="page-text advantages-item-text">Да,&nbsp;по&nbsp;нему&nbsp;можно&nbsp;пройти! Если&nbsp;вы&nbsp;осмелитесь, разумеется</p>
-          </div>
-        </div>
+            <div class="advantages-item-inner-block">
+              <h3 class="page-title advantages-item-title">Там&nbsp;есть Мост&nbsp;Дьявола</h3>
+              <span class="advantages-item-separator"></span>
+              <p class="page-text advantages-item-text">Да,&nbsp;по&nbsp;нему&nbsp;можно&nbsp;пройти! Если&nbsp;вы&nbsp;осмелитесь, разумеется</p>
+            </div>
+          </li>
+        </ul>
       </section>
       <section class="features" data-test="service">
         <div class="features-slogan">
@@ -185,8 +185,8 @@
       </div>
     </footer>
     <div class="modal-container modal-container-close">
-      <div class="modal-window">
-        <button class="modal-close-button">
+      <div class="modal-window" data-test="modal">
+        <button class="modal-close-button" type="button">
           <span class="visually-hidden">Кнопка - закрыть модальное окно</span>
         </button>
         <div class="modal-content">
@@ -236,7 +236,7 @@
                 </div>
               </div>
             </div>
-            <button class="modal-form-search-button button-blue" type="submit">Найти</button>
+            <button class="modal-form-search-button button button-blue" type="submit">Найти</button>
           </form>
         </div>
       </div>

@@ -81,16 +81,6 @@ body {
   color: #ffffff;
 }
 
-.button:disabled {
-  color: rgba(255, 255, 255, 0.3);
-  background-color: #e5e5e5;
-}
-
-.button:disabled:hover {
-  color: rgba(255, 255, 255, 0.3);
-  background-color: #e5e5e5;
-}
-
 .button-large {
   font-size: 20px;
   line-height: 36px;
@@ -139,16 +129,19 @@ body {
 }
 
 .button-transparent {
+  color: #ffffff;
   background-color: transparent;
 }
 
 .button-transparent:hover {
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: transparent;
 }
 
 .button-transparent:focus-visible {
   outline: 3px solid #83b3d3;
   color: #ffffff;
+  background-color: transparent;
 }
 
 .button-transparent:active {
@@ -157,14 +150,19 @@ body {
   background-color: transparent;
 }
 
-.button-transparent:disabled {
-  outline: none;
-  background-color: transparent;
-  opacity: 0.1;
+.button:disabled,
+.button-brown:disabled,
+.button-blue:disabled,
+.button-green:disabled {
+  color: #ffffff;
+  background-color: #e5e5e5;
 }
 
-.button-transparent:disabled:hover {
+.button-transparent:disabled {
+  outline: none;
+  color: #ffffff;
   background-color: transparent;
+  opacity: 0.1;
 }
 
 /* Стили невидимых элементов */
@@ -210,6 +208,7 @@ body {
   margin: 0;
   margin-right: auto;
   list-style: none;
+  max-width: 600px;
 }
 
 .header-menu-item {
@@ -262,6 +261,7 @@ body {
   align-items: center;
   margin: 0;
   margin-right: 19px;
+  padding: auto 0;
 }
 
 .header-search-item {
@@ -338,7 +338,7 @@ body {
   flex-wrap: wrap;
   min-height: 485px;
   padding: 0 370px;
-  background-color: #82b3d3;
+  background-color: #8fa8b7;
   background-image: url("../images/background/sedona-bg-divider.svg"), url("../images/background/sedona-bg.jpg");
   background-repeat: no-repeat no-repeat;
   background-position: bottom center;
@@ -370,82 +370,59 @@ body {
 .advantages-description-text {
   margin-top: 25px;
   max-width: 701px;
+  margin-bottom: 20px;
 }
 
 .advantages-items {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0;
+  display: flex;
 }
 
 .advantages-item {
-  min-height: 385px;
-  background-color: #e0e0e0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.advantages-item-wide-img {
+  width: 400px;
+  min-height: 384px;
   padding: 0;
-  grid-column: span 2;
 }
 
-.advantages-item:first-child,
-.advantages-item:last-child {
+.advantages-item-with-picture {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+.advantages-item-inner-block {
+  display: flex;
+  width: 400px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   background-color: #82b3d3;
 }
 
-.advantages-item:nth-child(3) {
-  background-color: rgba(131, 179, 211, 0.12);
-}
-
-.advantages-item:nth-child(4) {
-  background-color: rgba(131, 179, 211, 0.2);
-}
-
-.advantages-item:nth-child(5) {
-  background-color: rgba(131, 179, 211, 0.12);
-}
-
-.advantages-item:first-child .advantages-item-title,
-.advantages-item:last-child .advantages-item-title {
-  color: #ffffff;
-}
-
-.advantages-item:first-child .advantages-item-separator,
-.advantages-item:last-child .advantages-item-separator {
-  background-color: #ffffff;
-  opacity: 0.3;
-}
-
-.advantages-item:first-child .advantages-item-text,
-.advantages-item:last-child .advantages-item-text {
-  color: #ffffff;
-}
-
 .advantages-item-title {
-  margin-top: 0;
-  color: #000000;
-  max-width: 181px;
-  text-align: center;
   font-size: 24px;
   line-height: 28px;
+  font-weight: 700;
   text-transform: uppercase;
+  max-width: 175px;
+  margin-top: 20px;
 }
 
 .advantages-item-separator {
   width: 60px;
   height: 2px;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 0.3;
-  margin-top: 29px;
-  margin-bottom: 29px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .advantages-item-text {
@@ -453,6 +430,24 @@ body {
   color: #333333;
   font-size: 18px;
   line-height: 21px;
+  margin-bottom: 20px;
+}
+
+.advantages-item:nth-child(even) {
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+.advantages-item:nth-child(odd):not(:first-child):not(:last-child) {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+
+.advantages-item-inner-block .advantages-item-title,
+.advantages-item-inner-block .advantages-item-text {
+  color: #ffffff;
+}
+
+.advantages-item-inner-block .advantages-item-separator {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .features {
@@ -478,28 +473,28 @@ body {
 
 .features-slogan-text {
   margin-top: 20px;
+  margin-bottom: 20px;
   max-width: 490px;
   font-size: 22px;
   line-height: 26px;
 }
 
 .features-items {
-  min-height: 385px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
 .features-item {
-  min-width: 400px;
+  width: 400px;
+  min-height: 385px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.features-item:first-child,
-.features-item:last-child {
+.features-item:nth-child(odd) {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
@@ -537,6 +532,7 @@ body {
 
 .features-item-text {
   margin-top: 29px;
+  margin-bottom: 20px;
   font-size: 18px;
   line-height: 21px;
   max-width: 230px;
@@ -547,11 +543,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
 .interest-title {
+  margin-top: 97px;
   max-width: 300px;
   font-size: 30px;
   line-height: 36px;
@@ -565,6 +561,7 @@ body {
 
 .interest-button {
   margin-top: 54px;
+  margin-bottom: 20px;
   padding: 8px 50px;
   font-size: 20px;
   line-height: 36px;
@@ -580,7 +577,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #82b3d3;
+  background-color: #8fa8b7;
   background-image: url("../images/background/subscribe-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -604,6 +601,7 @@ body {
 
 .subscribtion-form {
   margin-top: 55px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -720,7 +718,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(242, 242, 242, 0.8);
 }
 
 .modal-container-close {
@@ -1047,7 +1045,7 @@ body {
   padding-bottom: 70px;
   padding-left: 70px;
   margin: 0;
-  background-color: #5684ac;
+  background-color: #8fa8b7;
   background-image: url("../images/background/sedona-hotels-bg.jpg");
   background-position: center;
   background-size: cover;
@@ -1401,11 +1399,12 @@ body {
 }
 
 .catalog-search-header {
-  padding: 0;
-  margin: 0 70px;
   display: flex;
+  flex-wrap: wrap;
   flex-grow: 1;
   align-items: center;
+  padding: 0;
+  margin: 0 70px;
 }
 
 .catalog-search-title {
@@ -1413,16 +1412,15 @@ body {
   line-height: 36px;
   text-transform: uppercase;
   margin-right: auto;
+  max-width: 341px;
 }
 
 .catalog-search-sort {
   padding: 12px 48px 12px 18px;
   margin-right: 70px;
-  width: 292px;
+  margin-left: 20px;
+  min-width: 292px;
   height: 49px;
-  border: 2px solid #e5e5e5;
-  border-radius: 4px;
-  appearance: none;
   background-image: url("../images/icons/selector-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
@@ -1431,7 +1429,12 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+  appearance: none;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+  background-color: #ffffff;
   color: #333333;
+  flex-shrink: 0;
 }
 
 .catalog-search-sort:hover {
@@ -1451,8 +1454,14 @@ body {
 .catalog-search-view-selector {
   display: flex;
   flex-wrap: wrap;
-  max-width: 162px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 160px;
+  width: 162px;
   gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .catalog-search-view-option {
@@ -1460,7 +1469,7 @@ body {
   width: 48px;
   height: 48px;
   border: 2px solid #e5e5e5;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .catalog-search-view-option:hover,
@@ -1513,6 +1522,7 @@ body {
   padding: 19px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
+  color: #333333;
 }
 
 .catalog-card-picture {
@@ -1650,14 +1660,13 @@ body {
   min-height: 418px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #ffffff;
 }
 
 .catalog-subscribtion-title {
-  margin-bottom: 21px;
+  margin-top: 100px;
   max-width: 408px;
   font-size: 30px;
   line-height: 36px;
@@ -1665,13 +1674,15 @@ body {
 }
 
 .catalog-subscribtion-text {
-  margin-bottom: 55px;
   max-width: 500px;
+  margin-top: 21px;
 }
 
 .catalog-subscribtion-form {
   display: flex;
   flex-direction: row;
+  margin-top: 55px;
+  margin-bottom: 20px;
 }
 
 .catalog-subscribtion-form-email {
